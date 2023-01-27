@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 1rem;
+}
+
+body {
+    font-family: "Quicksand",sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header .jumbotron {
+    width: 100%;
+    /* height: 506px; */
+    min-height: 506px;
+    margin-inline: auto;
+    /* max-width: 1500px; */
+    background-image: url('../img/background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    /* padding: 20px; */
+    /* color: black; */
+    background-blend-mode: darken;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: center;
+    /* display: none; */
+}
+
+button.menu {
+    display: none;
+    border: none;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+button.menu img {
+    width: 20px;
+}
+
+.nav-list ul {
+    display: flex;
+    gap: 3rem;
+    padding-top: 5px;
+}
+
+.nav-list li {
+    list-style-type: none;
+}
+
+.nav-list li a {
+    color: #FFFEFE;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 10px 25px;
+    border-radius: 999px;
+    transition: all .3s ease-in-out;
+}
+
+.nav-list li a:hover {
+    background-color: #FFFEFE;
+    color: #0A2647;
+    font-weight: 600;
+}
+
+.logo {
+    width: 101px;
+    height: 150px;
+    background-color: #EFF2F5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom-left-radius: 999px;
+    border-bottom-right-radius: 999px;
+}
+
+.logo img {
+    width: 79.49px;
+}
+
+.heading-title {
+    text-align: center;
+    margin: 75px 0;
+}
+
+.heading-title h1 {
+    font-size: 40px;
+    color: #FFFEFE;
+    font-weight: 600;
+}
+
+.heading-title p {
+    color: #DDDDDD;
+    font-size: 22px;
+}
+
+main {
+    display: flex;
+    gap: 1.5rem;
+    padding: 20px;
+}
+
+#content {
+    flex: 3;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem 2rem;
+}
+
+#content img {
+    object-fit: cover;
+    object-position: center;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 20px;
+    /* margin-top: 20px; */
+}
+
+aside {
+    flex: 2;
+}
+
+.profile header {
+    text-align: center;
+}
+
+.profile header p {
+    color: #7B8FA1;
+}
+
+.profile section {
+    text-align: center;
+}
+
+.profile ul.social-media {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    padding-left: 0;
+}
+
+.profile ul.social-media li {
+    list-style-type: none;
+    padding: 5px 15px;
+}
+
+.profile ul.social-media li a {
+    text-decoration: none;
+    color: #0A2647;
+}
+
+.profile ul.social-media a.facebook-icon i {
+    color: #0081C9;
+}
+
+.profile ul.social-media a.instagram-icon i {
+    color: #A61F69;
+}
+
+.profile ul.social-media a.github-icon i {
+    color: #567189;
+}
+
+.profile header img {
+    width: 200px;
+    border-radius: 999px;
+}
+
+footer {
+    padding: 20px;
+    color: #FFFEFE;
+    background-color: #0A2647;
+    text-align: center;
+    font-weight: bold;
+}
+
+footer span {
+    color: #F2921D;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    button.menu { 
+        display: block;
+    }
+    .logo {
+        display: flex;
+        flex-flow: column nowrap;
+    }
+    .nav-list {
+        display: none;
+    }
+}
