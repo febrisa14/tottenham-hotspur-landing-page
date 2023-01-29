@@ -18,7 +18,7 @@
                 </div>
                 <section class="modal" id="modal-container">
                     <div class="close center">
-                        <span id="button-close"></span>
+                        <span></span>
                     </div>
                     <nav class="nav-modal">
                         <img class="logo-modal" src="assets/img/logo.svg" alt="Tottenham Hotspur">
@@ -91,17 +91,24 @@
     </footer>
     <script>
         const button_menu = document.getElementById("menu-button");
-        const button_close = document.getElementById("button-close");
+        const button_close = document.querySelector(".close");
         const modal = document.getElementById("modal-container");
         
         button_menu.addEventListener("click", function (e) {
             modal.style.display = "block";
             modal.classList.add("active");
+            document.body.style.position = 'fixed';
+            document.body.style.top = `-${window.scrollY}px`;
             e.preventDefault();
         });
 
         button_close.addEventListener("click", function (e) {
             modal.classList.remove("active");
+            modal.style.display = "none";
+            const scrollY = document.body.style.top;
+            document.body.style.position = '';
+            document.body.style.top = '';
+            window.scrollTo(0, parseInt(scrollY || '0') * -1);
             e.preventDefault();
         });
     </script>

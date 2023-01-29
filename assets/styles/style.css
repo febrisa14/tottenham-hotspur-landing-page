@@ -212,7 +212,7 @@ footer span {
     background-color: #0A2647;
     visibility: hidden;
     opacity: 0;
-	transition: opacity 0.5s, visibility 0s 0.5s;
+	transition: opacity 1s, visibility 0s 0.5s;
 }
 
 .modal.active {
@@ -220,7 +220,7 @@ footer span {
     height: 100%;
     opacity: 1;
     visibility: visible;
-    transition: opacity 0.5s;
+    transition: opacity 1s;
 }
 
 .center {
