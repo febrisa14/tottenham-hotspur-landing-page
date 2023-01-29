@@ -43,10 +43,10 @@
                         <nav class="nav-modal">
                             <img class="logo-modal" src="assets/img/logo.svg" alt="Tottenham Hotspur">
                             <ul>
-                                <li><a id="button-beranda" href="#beranda">Beranda</a></li>
-                                <li><a id="button-tentang" href="#tentang">Tentang</a></li>
-                                <li><a id="button-lokasi" href="#lokasi">Lokasi</a></li>
-                                <li><a id="button-jadwal" href="#jadwal">Jadwal</a></li>
+                                <li><a id="button-beranda-mobile" href="#beranda">Beranda</a></li>
+                                <li><a id="button-tentang-mobile" href="#tentang">Tentang</a></li>
+                                <li><a id="button-lokasi-mobile" href="#lokasi">Lokasi</a></li>
+                                <li><a id="button-jadwal-mobile" href="#jadwal">Jadwal</a></li>
                             </ul>
                         </nav>
                     </section>
@@ -135,7 +135,6 @@
         `;
     </script>
     <script>
-        //desktop sticky navbar
         window.addEventListener("resize", function () {
             if (window.innerWidth < 768) {
                 document.querySelector(".mobile").style.display = "block";
@@ -254,19 +253,19 @@
             });
 
              //function click in modal mobile
-            document.getElementById("button-beranda").addEventListener("click", function () {
+            document.getElementById("button-beranda-mobile").addEventListener("click", function () {
                 modal.classList.remove("active");
                 modal.style.display = "none";
             });
-            document.getElementById("button-tentang").addEventListener("click", function () {
+            document.getElementById("button-tentang-mobile").addEventListener("click", function () {
                 modal.classList.remove("active");
                 modal.style.display = "none";
             });
-            document.getElementById("button-lokasi").addEventListener("click", function () {
+            document.getElementById("button-lokasi-mobile").addEventListener("click", function () {
                 modal.classList.remove("active");
                 modal.style.display = "none";
             });
-            document.getElementById("button-jadwal").addEventListener("click", function () {
+            document.getElementById("button-jadwal-mobile").addEventListener("click", function () {
                 modal.classList.remove("active");
                 modal.style.display = "none";
             });
