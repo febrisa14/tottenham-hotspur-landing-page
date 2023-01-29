@@ -93,19 +93,19 @@
         const button_menu = document.getElementById("menu-button");
         const button_close = document.querySelector(".close");
         const modal = document.getElementById("modal-container");
-        
+        const scrollY = document.body.style.top;
+
         button_menu.addEventListener("click", function (e) {
             modal.style.display = "block";
             modal.classList.add("active");
             document.body.style.position = 'fixed';
-            document.body.style.top = `-${window.scrollY}px`;
+            document.body.style.top = `-${scrollY}px`;
             e.preventDefault();
         });
 
         button_close.addEventListener("click", function (e) {
             modal.classList.remove("active");
             modal.style.display = "none";
-            const scrollY = document.body.style.top;
             document.body.style.position = '';
             document.body.style.top = '';
             window.scrollTo(0, parseInt(scrollY || '0') * -1);
@@ -144,12 +144,24 @@
     <script>
         document.getElementById("button-tentang").addEventListener("click", function () {
             modal.classList.remove("active");
+            modal.style.display = "none";
+            document.body.style.position = '';
+            document.body.style.top = '';
+            window.scrollTo(0, parseInt(scrollY || '0') * -1);
         });
         document.getElementById("button-lokasi").addEventListener("click", function () {
             modal.classList.remove("active");
+            modal.style.display = "none";
+            document.body.style.position = '';
+            document.body.style.top = '';
+            window.scrollTo(0, parseInt(scrollY || '0') * -1);
         });
         document.getElementById("button-jadwal").addEventListener("click", function () {
             modal.classList.remove("active");
+            modal.style.display = "none";
+            document.body.style.position = '';
+            document.body.style.top = '';
+            window.scrollTo(0, parseInt(scrollY || '0') * -1);
         });
     </script>
     <script>
