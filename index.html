@@ -9,37 +9,52 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
 </head>
 <body>
-    <header>
+    <header id="beranda">
         <div class="jumbotron">
-            <div class="navbar-container">
-                <div class="logo">
-                    <img src="assets/img/logo.svg" alt="Tottenham Hotspur">
-                    <button class="menu" id="menu-button"><img src="assets/menu.svg" alt=""></button>    
-                </div>
-                <section class="modal" id="modal-container">
-                    <div class="close center">
-                        <span></span>
+            <div class="desktop">
+                <div class="navbar-container">
+                    <div class="logo">
+                        <img id="logo-img" src="assets/img/logo.svg" alt="Tottenham Hotspur">
                     </div>
-                    <nav class="nav-modal">
-                        <img class="logo-modal" src="assets/img/logo.svg" alt="Tottenham Hotspur">
+                    <nav class="nav-list">
                         <ul>
-                            <li><a id="button-tentang" href="#tentang">Tentang</a></li>
-                            <li><a id="button-lokasi" href="#lokasi">Lokasi</a></li>
-                            <li><a id="button-jadwal" href="#jadwal">Jadwal</a></li>
+                            <li><a href="#beranda">Beranda</a></li>
+                            <li><a href="#tentang">Tentang</a></li>
+                            <li><a href="#lokasi">Lokasi</a></li>
+                            <li><a href="#jadwal">Jadwal</a></li>
                         </ul>
                     </nav>
-                </section>
-                <nav class="nav-list">
-                    <ul>
-                        <li><a href="#tentang">Tentang</a></li>
-                        <li><a href="#lokasi">Lokasi</a></li>
-                        <li><a href="#jadwal">Jadwal</a></li>
-                    </ul>
-                </nav>
+                </div>
+                <div class="heading-title">
+                    <h1>Tottenham Hotspur</h1>
+                    <p>"To Dare Is To Do #COYS, Glory Glory Tottenham Hotspur"</p>
+                </div>
             </div>
-            <div class="heading-title">
-                <h1>Tottenham Hotspur</h1>
-                <p>"To Dare Is To Do #COYS, Glory Glory Tottenham Hotspur"</p>
+            <div class="mobile">
+                <div class="navbar-container">
+                    <div class="logo">
+                        <img id="logo-img" src="assets/img/logo.svg" alt="Tottenham Hotspur">
+                        <button class="menu" id="menu-button"><img src="assets/menu.svg" alt=""></button>    
+                    </div>
+                    <section class="modal" id="modal-container">
+                        <div class="close center">
+                            <span></span>
+                        </div>
+                        <nav class="nav-modal">
+                            <img class="logo-modal" src="assets/img/logo.svg" alt="Tottenham Hotspur">
+                            <ul>
+                                <li><a id="button-beranda" href="#beranda">Beranda</a></li>
+                                <li><a id="button-tentang" href="#tentang">Tentang</a></li>
+                                <li><a id="button-lokasi" href="#lokasi">Lokasi</a></li>
+                                <li><a id="button-jadwal" href="#jadwal">Jadwal</a></li>
+                            </ul>
+                        </nav>
+                    </section>
+                </div>
+                <div class="heading-title">
+                    <h1>Tottenham Hotspur</h1>
+                    <p>"To Dare Is To Do #COYS, Glory Glory Tottenham Hotspur"</p>
+                </div>
             </div>
         </div>
     </header>
@@ -89,31 +104,9 @@
     <footer>
         &copy; 2023 by <span>Febrisa Permana</span>
     </footer>
-    <script>
-        const button_menu = document.getElementById("menu-button");
-        const button_close = document.querySelector(".close");
-        const modal = document.getElementById("modal-container");
-        const scrollY = document.body.style.top;
-
-        button_menu.addEventListener("click", function (e) {
-            modal.style.display = "block";
-            modal.classList.add("active");
-            document.body.style.position = 'fixed';
-            document.body.style.top = `-${scrollY}px`;
-            e.preventDefault();
-        });
-
-        button_close.addEventListener("click", function (e) {
-            modal.classList.remove("active");
-            modal.style.display = "none";
-            document.body.style.position = '';
-            document.body.style.top = '';
-            window.scrollTo(0, parseInt(scrollY || '0') * -1);
-            e.preventDefault();
-        });
-    </script>
     <script src="data.js"></script>
     <script>
+        //append content jadwal
         const dataMatch = match;
         const data = dataMatch.filter(item => item.match_id == 452703);
         var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
@@ -142,30 +135,158 @@
         `;
     </script>
     <script>
-        document.getElementById("button-tentang").addEventListener("click", function () {
-            modal.classList.remove("active");
-            modal.style.display = "none";
-            document.body.style.position = '';
-            document.body.style.top = '';
-            window.scrollTo(0, parseInt(scrollY || '0') * -1);
+        //desktop sticky navbar
+        window.addEventListener("resize", function () {
+            if (window.innerWidth < 768) {
+                document.querySelector(".mobile").style.display = "block";
+                document.querySelector(".desktop").style.display = "none";
+                stickyMobile()
+                modalMobile();
+            } else {
+                document.querySelector(".mobile").style.display = "none";
+                document.querySelector(".desktop").style.display = "block";
+                desktopSticky();
+            }
         });
-        document.getElementById("button-lokasi").addEventListener("click", function () {
-            modal.classList.remove("active");
-            modal.style.display = "none";
-            document.body.style.position = '';
-            document.body.style.top = '';
-            window.scrollTo(0, parseInt(scrollY || '0') * -1);
+
+        document.addEventListener("DOMContentLoaded", function(event) { 
+            if (window.innerWidth < 768) {
+                document.querySelector(".mobile").style.display = "block";
+                document.querySelector(".desktop").style.display = "none";
+                stickyMobile()
+                modalMobile();
+            } else {
+                document.querySelector(".mobile").style.display = "none";
+                document.querySelector(".desktop").style.display = "block";
+                desktopSticky();
+            }
         });
-        document.getElementById("button-jadwal").addEventListener("click", function () {
-            modal.classList.remove("active");
-            modal.style.display = "none";
-            document.body.style.position = '';
-            document.body.style.top = '';
-            window.scrollTo(0, parseInt(scrollY || '0') * -1);
-        });
-    </script>
-    <script>
-        
+
+        function desktopSticky() {
+            var header = document.querySelector(".desktop .navbar-container");
+            var heading_title = document.querySelector(".desktop .heading-title");
+            var logo_img = document.querySelector(".desktop #logo-img");
+            var logo_container = document.querySelector(".desktop .logo");
+
+            window.onscroll = function() {
+                if (window.pageYOffset > 10) {
+                    logo_container.style.height = "75px";
+                    logo_container.style.background = "transparent";
+
+                    logo_img.style.width = "50px";
+                    logo_img.style.filter = "invert(1) brightness(100) contrast(10) saturate(0.5)";
+
+                    heading_title.style.display = "flex";
+                    heading_title.style.justifyContent = "center";
+                    heading_title.style.flexFlow = "column";
+                    heading_title.style.alignItems = "center";
+                    heading_title.style.paddingTop = "70px";
+                    
+                    header.classList.add("sticky");
+                } else {
+                    logo_container.style.height = "150px";
+                    logo_container.style.background = "#EFF2F5";
+
+                    logo_img.style.width = "79.49px";
+                    logo_img.style.filter = "";
+
+                    heading_title.style.display = "";
+                    heading_title.style.justifyContent = "";
+                    heading_title.style.flexFlow = "";
+                    heading_title.style.alignItems = "";
+                    heading_title.style.paddingTop = "";
+
+                    header.classList.remove("sticky");
+                }
+            };
+        }
+
+        function stickyMobile() {
+            var header = document.querySelector(".mobile .navbar-container");
+            var heading_title = document.querySelector(".mobile .heading-title");
+            var logo_container = document.querySelector(".mobile .logo");
+            var logo_img = document.querySelector(".mobile #logo-img");
+
+            window.onscroll = function() {
+                if (window.pageYOffset > 50) {
+                    logo_container.style.display = "flex";
+                    logo_container.style.flexDirection = "row";
+                    logo_container.style.width = "100%";
+                    logo_container.style.height = "80px";
+                    logo_container.style.marginInline = "20px";
+                    logo_container.style.justifyContent = "space-between";
+
+                    logo_img.style.width = "50px";
+
+                    heading_title.style.display = "flex";
+                    heading_title.style.justifyContent = "center";
+                    heading_title.style.flexFlow = "column";
+                    heading_title.style.alignItems = "center";
+                    heading_title.style.paddingTop = "130px";
+
+                    header.classList.add("sticky-mobile");
+                } else {
+                    logo_container.style.display = "";
+                    logo_container.style.flexDirection = "";
+                    logo_container.style.width = "";
+                    logo_container.style.height = "";
+                    logo_container.style.marginInline = "";
+                    logo_container.style.justifyContent = "";
+
+                    logo_img.style.width = "";
+
+                    heading_title.style.display = "";
+                    heading_title.style.justifyContent = "";
+                    heading_title.style.flexFlow = "";
+                    heading_title.style.alignItems = "";
+                    heading_title.style.paddingTop = "";
+
+                    header.classList.remove("sticky-mobile");
+                }
+            };
+        }
+
+        function modalMobile() {
+            const button_menu = document.getElementById("menu-button");
+            const button_close = document.querySelector(".close");
+            const modal = document.getElementById("modal-container");
+            const scrollY = document.body.style.top;
+
+            button_menu.addEventListener("click", function (e) {
+                modal.style.display = "block";
+                modal.classList.add("active");
+                // document.body.style.position = 'fixed';
+                // document.body.style.top = `-${scrollY}px`;
+                e.preventDefault();
+            });
+
+            button_close.addEventListener("click", function (e) {
+                modal.classList.remove("active");
+                modal.style.display = "none";
+                // document.body.style.position = '';
+                // document.body.style.top = '';
+                // window.scrollTo(0, parseInt(scrollY || '0') * -1);
+                e.preventDefault();
+            });
+
+             //function click in modal mobile
+            document.getElementById("button-beranda").addEventListener("click", function () {
+                modal.classList.remove("active");
+                modal.style.display = "none";
+            });
+            document.getElementById("button-tentang").addEventListener("click", function () {
+                modal.classList.remove("active");
+                modal.style.display = "none";
+            });
+            document.getElementById("button-lokasi").addEventListener("click", function () {
+                modal.classList.remove("active");
+                modal.style.display = "none";
+            });
+            document.getElementById("button-jadwal").addEventListener("click", function () {
+                modal.classList.remove("active");
+                modal.style.display = "none";
+            });
+        }
     </script>
 </body>
 </html>
