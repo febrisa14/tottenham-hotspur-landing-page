@@ -75,7 +75,7 @@ button.menu img {
 .nav-list ul {
     display: flex;
     gap: 3rem;
-    padding-top: 5px;
+    padding-top: 10px;
 }
 
 .nav-list li {
