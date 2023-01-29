@@ -24,7 +24,7 @@ header .jumbotron {
     min-height: 506px;
     margin-inline: auto;
     /* max-width: 1500px; */
-    background-image: url('../img/background.png');
+    background: url('../assets/img/background.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
