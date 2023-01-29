@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tottenham Hotspurs Football Club</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <title>Tottenham Hotspur Football Club</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
 </head>
 <body>
@@ -13,20 +13,33 @@
         <div class="jumbotron">
             <div class="navbar-container">
                 <div class="logo">
-                    <img src="img/logo.svg" alt="Tottenham Hotspurs">
-                    <button class="menu"><img src="assets/menu.svg" alt=""></button>    
+                    <img src="assets/img/logo.svg" alt="Tottenham Hotspur">
+                    <button class="menu" id="menu-button"><img src="assets/menu.svg" alt=""></button>    
                 </div>
+                <section class="modal" id="modal-container">
+                    <div class="close center">
+                        <span id="button-close"></span>
+                    </div>
+                    <nav class="nav-modal">
+                        <img class="logo-modal" src="assets/img/logo.svg" alt="Tottenham Hotspur">
+                        <ul>
+                            <li><a id="button-tentang" href="#tentang">Tentang</a></li>
+                            <li><a id="button-lokasi" href="#lokasi">Lokasi</a></li>
+                            <li><a id="button-jadwal" href="#jadwal">Jadwal</a></li>
+                        </ul>
+                    </nav>
+                </section>
                 <nav class="nav-list">
                     <ul>
                         <li><a href="#tentang">Tentang</a></li>
                         <li><a href="#lokasi">Lokasi</a></li>
-                        <li><a href="#">Jadwal</a></li>
+                        <li><a href="#jadwal">Jadwal</a></li>
                     </ul>
                 </nav>
             </div>
             <div class="heading-title">
-                <h1>Tottenham Hotspurs</h1>
-                <p>"To Dare Is To Do #COYS, Glory Glory Tottenham Hotspurs"</p>
+                <h1>Tottenham Hotspur</h1>
+                <p>"To Dare Is To Do #COYS, Glory Glory Tottenham Hotspur"</p>
             </div>
         </div>
     </header>
@@ -34,24 +47,32 @@
         <div id="content">
             <article id="tentang" class="card">
                 <h2>Tentang</h2>
-                <img src="img/tentang.png" alt="Tottenham Hotspurs">
+                <img src="assets/img/tentang.png" class="thumbnail" alt="Tottenham Hotspur">
                 <p>Tottenham Hotspur Football Club /ˈtɒtənəm/, adalah klub sepak bola yang berasal dari Tottenham, sebuah daerah yang berada di wilayah utara London. Mereka juga dikenal sebagai Spurs, The Spurs dan Tottenham, sementara penggemar mereka memberi mereka nama the Lilywhites karena seragam tradisional mereka yang berwarna putih.
                     Didirikan pada tahun 1882, Tottenham memenangkan Piala FA untuk pertama kalinya pada tahun 1901, dan menjadi satu-satunya klub non-Liga yang menjuarai Piala FA, sejak dibentuknya The Football League. Pada musim 1960-61, Tottenham adalah klub pertama pada abad ke-20 yang meraih gelar ganda sebagai juara Liga dan Piala FA. Setelah berhasil mempertahankan Piala FA pada tahun 1962, Tottenham menjadi klub Inggris pertama yang memenangkan kompetisi klub UEFA dengan menjadi juara Piala Winners UEFA pada tahun 1963. Piala FA yang ketiga kalinya pada tahun 1960-an, dimenangkan pada tahun 1967.</p>
             </article>
             <article id="lokasi" class="card">
                 <h2>Lokasi</h2>
-                <img src="img/lokasi.png" alt="Tottenham Hotspurs">
+                <img src="assets/img/lokasi.png" class="thumbnail" alt="Tottenham Hotspur">
                 <p>Klub ini bermarkas di Stadion Tottenham Hotspur, yang dimana bermarkas di kota London Utara. Motto dari klub ini adalah Audere est Facere yang merupakan bahasa Latin yang sering diterjemahkan ke dalam bahasa Inggris sebagai "To Dare is To Do". Spurs memiliki perseteruan yang cukup tua dengan klub sekota, Arsenal, dan pertandingan antara Spurs dengan Arsenal terkenal dengan nama Derby London Utara.</p>
             </article>
             <article id="jadwal" class="card">
                 <h2>Jadwal Pertandingan</h2>
+                <div class="match-container">
+                    <div class="match-header">
+                    </div>
+                    <div class="match-content">
+                    </div>
+                    <div class="match-footer">
+                    </div>
+                </div>
             </article>
         </div>
-        <aside>
+        <aside id="content-right">
             <article class="profile card">
                 <header>
                     <h2>My Profile</h2>
-                    <img src="img/profile.jpg" alt="I Gede Febrisa Permana">
+                    <img src="assets/img/profile.jpg" alt="I Gede Febrisa Permana">
                     <h3>I Gede Febrisa Permana</h3>
                     <p>“Live as if you were to die tomorrow. Learn as if you were to live forever.” — <strong>Mahatma Gandhi</strong></p>
                 </header>
@@ -68,6 +89,62 @@
     <footer>
         &copy; 2023 by <span>Febrisa Permana</span>
     </footer>
+    <script>
+        const button_menu = document.getElementById("menu-button");
+        const button_close = document.getElementById("button-close");
+        const modal = document.getElementById("modal-container");
+        
+        button_menu.addEventListener("click", function (e) {
+            modal.style.display = "block";
+            modal.classList.add("active");
+            e.preventDefault();
+        });
+
+        button_close.addEventListener("click", function (e) {
+            modal.classList.remove("active");
+            e.preventDefault();
+        });
+    </script>
+    <script src="data.js"></script>
+    <script>
+        const dataMatch = match;
+        const data = dataMatch.filter(item => item.match_id == 452681);
+        var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        var formatDate = new Date(data[0].match_start);
+        var date = formatDate.toLocaleDateString("en-US", options);
+        var time = formatDate.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+        document.querySelector(".match-header").innerHTML = 
+        `<h3>${date}</h3>
+        <p>${time}</p>`;
+        document.querySelector(".match-content").innerHTML = 
+        `<div class="home-team">
+            <img src="${data[0].home_team.logo}" alt="${data[0].home_team.name}" />
+            <h4>${data[0].home_team.common_name} (${data[0].home_team.short_code})</h4>
+        </div>
+        <div class="score-match">
+            ${data[0].stats.home_score} - ${data[0].stats.away_score}
+        </div>
+        <div class="away-team">
+            <img src="${data[0].away_team.logo}" alt="${data[0].away_team.name}" />
+            <h4>${data[0].away_team.common_name} (${data[0].away_team.short_code})</h4>
+        </div>`;
+        document.querySelector(".match-footer").innerHTML = 
+        `
+        <h4>${data[0].venue.name} (${data[0].venue.city})</h4>
+        <p>${data[0].group.group_name}</p>
+        `;
+    </script>
+    <script>
+        document.getElementById("button-tentang").addEventListener("click", function () {
+            modal.classList.remove("active");
+        });
+        document.getElementById("button-lokasi").addEventListener("click", function () {
+            modal.classList.remove("active");
+        });
+        document.getElementById("button-jadwal").addEventListener("click", function () {
+            modal.classList.remove("active");
+        });
+    </script>
     <script>
         
     </script>
