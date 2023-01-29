@@ -24,7 +24,7 @@ header .jumbotron {
     min-height: 506px;
     margin-inline: auto;
     /* max-width: 1500px; */
-    background-image: url('../img/background.png');
+    background: url('../img/background.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -271,7 +271,7 @@ footer span {
     display: flex;
     height: 30vw;
     flex-flow: column;
-    padding: 40%;
+    padding: 50%;
 }
 
 .nav-modal li {
@@ -283,7 +283,7 @@ footer span {
 
 .nav-modal a {
     text-decoration: none;
-    color: #DDDDDD;
+    color: #fff;
 }
 
 .logo-modal {
@@ -320,14 +320,10 @@ footer span {
     padding-top: 20px;
 }
 
-.match-content .home-team {
+.match-content .home-team , .match-content .away-team {
     width: 100%;
     text-align: center;
-}
-
-.match-content .away-team {
-    width: 100%;
-    text-align: center;
+    font-weight: bolder;
 }
 
 .match-content .score-match {

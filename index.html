@@ -54,10 +54,10 @@
             <article id="lokasi" class="card">
                 <h2>Lokasi</h2>
                 <img src="assets/img/lokasi.png" class="thumbnail" alt="Tottenham Hotspur">
-                <p>Klub ini bermarkas di Stadion Tottenham Hotspur, yang dimana bermarkas di kota London Utara. Motto dari klub ini adalah Audere est Facere yang merupakan bahasa Latin yang sering diterjemahkan ke dalam bahasa Inggris sebagai "To Dare is To Do". Spurs memiliki perseteruan yang cukup tua dengan klub sekota, Arsenal, dan pertandingan antara Spurs dengan Arsenal terkenal dengan nama Derby London Utara.</p>
+                <p>Klub ini bermarkas di Stadion Tottenham Hotspur, yang dimana berada di kota London Utara. Motto dari klub ini adalah Audere est Facere yang merupakan bahasa Latin yang sering diterjemahkan ke dalam bahasa Inggris sebagai "To Dare is To Do". Spurs memiliki perseteruan yang cukup tua dengan klub sekota, Arsenal, dan pertandingan antara Spurs dengan Arsenal terkenal dengan nama Derby London Utara.</p>
             </article>
             <article id="jadwal" class="card">
-                <h2>Jadwal Pertandingan</h2>
+                <h2>Jadwal</h2>
                 <div class="match-container">
                     <div class="match-header">
                     </div>
@@ -115,14 +115,14 @@
     <script src="data.js"></script>
     <script>
         const dataMatch = match;
-        const data = dataMatch.filter(item => item.match_id == 452681);
+        const data = dataMatch.filter(item => item.match_id == 452703);
         var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
         var formatDate = new Date(data[0].match_start);
         var date = formatDate.toLocaleDateString("en-US", options);
-        var time = formatDate.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+        var time = formatDate.toLocaleTimeString("en-US", { hour: "2-digit", minute: "2-digit" });
         document.querySelector(".match-header").innerHTML = 
         `<h3>${date}</h3>
-        <p>${time}</p>`;
+        <p>${time} GMT</p>`;
         document.querySelector(".match-content").innerHTML = 
         `<div class="home-team">
             <img src="${data[0].home_team.logo}" alt="${data[0].home_team.name}" />
