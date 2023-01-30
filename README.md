@@ -1,6 +1,6 @@
 # tottenham-hotspurs-landing-page
 
-Project ini merupakan submission Dicoding Modul "Belajar Dasar Pemrograman Web", dimana hanya menggunakan bahasa pemrograman native CSS, JS.
+Project ini hanya menggunakan bahasa pemrograman native CSS, JS, tanpa Framework seperti Bootstrap atau sebagainya.
 
 Demo : https://tottenham-hotspur.netlify.app
 
