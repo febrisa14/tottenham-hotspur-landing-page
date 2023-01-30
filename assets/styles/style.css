@@ -55,7 +55,7 @@ header .jumbotron {
     z-index: 999;
     width: 100%;
     top: 0;
-    background: #EFF2F5;
+    background: #0A2647;
 }
 
 .mobile {
@@ -375,6 +375,7 @@ footer span {
     button.menu { 
         display: block;
     }
+
     .logo {
         display: flex;
         flex-flow: column nowrap;

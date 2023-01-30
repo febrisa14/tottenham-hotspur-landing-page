@@ -197,6 +197,8 @@
             var heading_title = document.querySelector(".mobile .heading-title");
             var logo_container = document.querySelector(".mobile .logo");
             var logo_img = document.querySelector(".mobile #logo-img");
+            var btn_menu = document.querySelector(".menu");
+            var btn_menu_icon = document.querySelector(".menu img");
 
             window.onscroll = function() {
                 if (window.pageYOffset > 50) {
@@ -206,10 +208,15 @@
                     logo_container.style.height = "80px";
                     logo_container.style.marginInline = "20px";
                     logo_container.style.justifyContent = "space-between";
+                    logo_container.style.background = "transparent";
 
                     logo_img.style.width = "50px";
+                    logo_img.style.filter = "invert(1) brightness(100) contrast(10) saturate(0.5)";
 
                     heading_title.style.paddingTop = "130px";
+
+                    btn_menu.style.background = "transparent";
+                    btn_menu_icon.style.filter = "invert(1) brightness(100) contrast(10) saturate(0.5)";
 
                     header.classList.add("sticky-mobile");
                 } else {
@@ -219,8 +226,13 @@
                     logo_container.style.height = "";
                     logo_container.style.marginInline = "";
                     logo_container.style.justifyContent = "";
+                    logo_container.style.background = "";
 
                     logo_img.style.width = "";
+                    logo_img.style.filter = "";
+
+                    btn_menu.style.background = "";
+                    btn_menu_icon.style.filter = "";
 
                     heading_title.style.paddingTop = "";
 
