@@ -1,5 +1,12 @@
 # tottenham-hotspurs-landing-page
 
-Project ini merupakan submission Dicoding Modul "Belajar Dasar Pemrograman Web"
+Project ini merupakan submission Dicoding Modul "Belajar Dasar Pemrograman Web", dimana hanya menggunakan bahasa pemrograman native CSS, JS
 
-![image](https://images.unsplash.com/photo-1661961112951-f2bfd1f253ce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=872&q=80)
+<b>Tampilan Desktop</b>
+
+![screencapture-tottenham-hotspur-netlify-app-2023-01-30-11_50_30](https://user-images.githubusercontent.com/78676283/215384344-4356b799-191f-4319-9c78-f7eb270962a7.png)
+
+<b>Tampilan Mobile</b>
+
+![photo 1](https://user-images.githubusercontent.com/78676283/215384774-94225d28-c292-44b9-b0fe-da5f9ee868a3.png)
+![photo 2](https://user-images.githubusercontent.com/78676283/215384784-54fd96c5-952c-4b98-a1cb-1a05437cb338.png)
