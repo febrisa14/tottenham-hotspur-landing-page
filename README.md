@@ -1,6 +1,6 @@
 # tottenham-hotspur-landing-page
 
-Tottenham Hotspur Landing Page made using HTML, CSS, Vanila Javascript without Bootstrap or Jquery.
+Tottenham Hotspur Simple Responsive Landing Page made using HTML, CSS, Vanila Javascript without Bootstrap or Jquery.
 
 Demo : https://tottenham-hotspur.netlify.app
 
