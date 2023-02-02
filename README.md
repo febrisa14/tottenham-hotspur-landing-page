@@ -1,6 +1,6 @@
-# tottenham-hotspurs-landing-page
+# tottenham-hotspur-landing-page
 
-Project ini hanya menggunakan bahasa pemrograman native CSS, JS, tanpa Framework seperti Bootstrap atau sebagainya.
+Tottenham Hotspur Landing Page made using HTML, CSS, Vanila Javascript without Bootstrap or Jquery.
 
 Demo : https://tottenham-hotspur.netlify.app
 
